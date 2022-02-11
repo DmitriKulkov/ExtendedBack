@@ -16,14 +16,11 @@ import { AuthService } from './auth.service';
     forwardRef(() => UsersModule),
     JwtModule.register({
       secret: process.env.PRIVATE_KEY || 'SECRET',
-      signOptions:{
-        expiresIn: '24h'
-      }
-    })
+      signOptions: {
+        expiresIn: '24h',
+      },
+    }),
   ],
-  exports: [
-    AuthService,
-    JwtModule
-  ]
+  exports: [AuthService, JwtModule],
 })
 export class AuthModule {}
